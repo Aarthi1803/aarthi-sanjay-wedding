@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Aarthi and Sanjay//Wedding Invitation//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:aarthi-sanjay-reception-20270410@example.com
+DTSTAMP:20261107T000000Z
+DTSTART;VALUE=DATE:20270410
+DTEND;VALUE=DATE:20270411
+SUMMARY:Aarthi & Sanjay — Wedding Reception
+LOCATION:RS Mahal\, Panchayat Office\, 88 Kolapakkam Main Road\, VGN Prathish Avenue\, Gerugambakkam\, Chennai 600128
+DESCRIPTION:Wedding reception celebration. Starts at 7:00 PM onwards.
+END:VEVENT
+BEGIN:VEVENT
+UID:aarthi-sanjay-wedding-20270411@example.com
+DTSTAMP:20261107T000000Z
+DTSTART;VALUE=DATE:20270411
+DTEND;VALUE=DATE:20270412
+SUMMARY:Aarthi & Sanjay — Wedding Ceremony
+LOCATION:RS Mahal\, Panchayat Office\, 88 Kolapakkam Main Road\, VGN Prathish Avenue\, Gerugambakkam\, Chennai 600128
+DESCRIPTION:Wedding ceremony from 7:00 AM to 8:00 AM.
+END:VEVENT
+END:VCALENDAR
