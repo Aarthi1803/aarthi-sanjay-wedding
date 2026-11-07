@@ -15,7 +15,7 @@
   <div class="gold-edge"></div>
   <header class="site-header">
     <a class="monogram" href="#home">A <span>✦</span> S</a>
-    <nav><a href="#dates">Our dates</a><a href="#venue">Venue</a><a href="#memories">Memories</a></nav>
+    <nav><a href="#dates">Our dates</a><a href="#venue">Venue</a><a href="#our-moments">Our photos</a><a href="#memories">Share photos</a></nav>
     <span class="save-date">SAVE THE DATE ↗</span>
   </header>
 
@@ -48,10 +48,9 @@
             <div class="date-divider"></div>
             <div><span>WEDDING</span><strong>Sunday, 11</strong><b>April 2027</b><small>7:00 AM – 8:00 AM</small></div>
           </div>
-          <canvas id="scratch-canvas" aria-label="Scratch the golden surface to reveal the wedding dates"></canvas>
-          <div class="scratch-prompt" id="scratch-prompt"><strong>A little golden secret</strong><span>Scratch here to discover our dates</span><b>✦</b></div>
+          <canvas id="scratch-canvas" aria-label="Scratch the golden surface with your finger to reveal the wedding dates">Scratch to reveal the dates: Reception Saturday, 10 April 2027; Wedding Sunday, 11 April 2027.</canvas>
         </div>
-        <p class="scratch-help">Rub the gold with your finger or mouse.</p>
+        <p class="scratch-help" id="scratch-help">Rub the gold with your finger or mouse to reveal the dates.</p>
         <button class="reveal-link" id="reveal-dates" type="button">Or tap to reveal both dates</button>
       </div>
       <a class="discover-link" href="#celebrations">Discover the celebration ↓</a>
@@ -60,24 +59,32 @@
     <section class="celebrations section" id="celebrations">
       <p class="kicker">THE BEGINNING OF FOREVER</p>
       <h2>Two beautiful days,<br><em>one precious celebration.</em></h2>
-      <div class="event-grid">
-        <article class="event-card">
-          <span class="event-symbol">✧</span>
-          <p class="kicker">THE RECEPTION</p>
-          <h3>Saturday, 10<br>April 2027</h3>
-          <p class="event-time">7:00 PM onwards</p>
-          <div class="thin-rule"></div>
-          <p>An evening to celebrate with family, friends, laughter and love.</p>
-          <a class="calendar-link" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Aarthi%20%26%20Sanjay%20Wedding%20Reception&dates=20270410/20270411&location=RS%20Mahal%2C%20Gerugambakkam%2C%20Chennai" target="_blank" rel="noopener">Add to Google Calendar ↗</a>
+      <div class="photo-event-stack">
+        <article class="photo-event reception-photo">
+          <div class="photo-event-shade"></div>
+          <div class="photo-event-copy">
+            <p class="photo-event-kicker">AN EVENING OF JOY & CELEBRATION</p>
+            <p class="photo-event-script">Please join us for our</p>
+            <h3>Reception Ceremony</h3>
+            <div class="event-ornament">✦ ───── ❀ ───── ✦</div>
+            <p class="photo-event-date">Saturday · 10 April 2027</p>
+            <p class="photo-event-time">7:00 PM onwards</p>
+            <p class="photo-event-note">An evening filled with love, laughter and the people who mean the most to us.</p>
+            <a class="photo-event-calendar" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Aarthi%20%26%20Sanjay%20Reception%20Ceremony&dates=20270410/20270411&location=RS%20Mahal%2C%20Gerugambakkam%2C%20Chennai" target="_blank" rel="noopener">Save reception date ↗</a>
+          </div>
         </article>
-        <article class="event-card wedding-card">
-          <span class="event-symbol">❀</span>
-          <p class="kicker">THE WEDDING</p>
-          <h3>Sunday, 11<br>April 2027</h3>
-          <p class="event-time">7:00 AM – 8:00 AM</p>
-          <div class="thin-rule"></div>
-          <p>Join us as we exchange vows and begin our forever.</p>
-          <a class="calendar-link" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Aarthi%20%26%20Sanjay%20Wedding%20Ceremony&dates=20270411/20270412&location=RS%20Mahal%2C%20Gerugambakkam%2C%20Chennai" target="_blank" rel="noopener">Add to Google Calendar ↗</a>
+        <article class="photo-event wedding-photo">
+          <div class="photo-event-shade"></div>
+          <div class="photo-event-copy">
+            <p class="photo-event-kicker">WITH THE BLESSINGS OF OUR FAMILIES</p>
+            <p class="photo-event-script">The beginning of forever</p>
+            <h3>Wedding Ceremony</h3>
+            <div class="event-ornament">✦ ───── ❀ ───── ✦</div>
+            <p class="photo-event-date">Sunday · 11 April 2027</p>
+            <p class="photo-event-time">7:00 AM – 8:00 AM</p>
+            <p class="photo-event-note">Join us as we exchange vows and begin our beautiful journey together.</p>
+            <a class="photo-event-calendar" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Aarthi%20%26%20Sanjay%20Wedding%20Ceremony&dates=20270411/20270412&location=RS%20Mahal%2C%20Gerugambakkam%2C%20Chennai" target="_blank" rel="noopener">Save wedding date ↗</a>
+          </div>
         </article>
       </div>
       <div class="countdown-box">
@@ -117,6 +124,7 @@
       </div>
       <p class="venue-note">Reception: Saturday, 10 April 2027 · 7:00 PM onwards<br>Wedding: Sunday, 11 April 2027 · 7:00 AM – 8:00 AM</p>
     </section>
+
 
     <section class="memories section" id="memories">
       <div class="memories-copy">

@@ -17,48 +17,90 @@ function tick() {
 }
 tick(); setInterval(tick,1000);
 
-// Scratch-to-reveal interaction. Supports mouse, touch and stylus.
+// Scratch-to-reveal interaction. The gold and its lettering are painted on
+// the canvas itself so every scratch visibly uncovers the dates beneath it.
 const canvas = document.getElementById("scratch-canvas");
 const ctx = canvas.getContext("2d", { willReadFrequently: true });
 const wrap = document.getElementById("scratch-wrap");
-let drawing = false, revealed = false;
+const help = document.getElementById("scratch-help");
+let drawing = false, revealed = false, lastPoint = null, moveCount = 0;
 function paintGold() {
+  if (revealed) return;
   const rect = wrap.getBoundingClientRect();
-  const dpr = window.devicePixelRatio || 1;
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
   canvas.width = Math.round(rect.width * dpr);
   canvas.height = Math.round(rect.height * dpr);
   canvas.style.width = rect.width + "px";
   canvas.style.height = rect.height + "px";
-  ctx.setTransform(dpr,0,0,dpr,0,0);
-  const grad = ctx.createLinearGradient(0,0,rect.width,rect.height);
-  grad.addColorStop(0,"#b4863e"); grad.addColorStop(.48,"#efd99d"); grad.addColorStop(1,"#b88d4d");
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  const grad = ctx.createLinearGradient(0, 0, rect.width, rect.height);
+  grad.addColorStop(0, "#b4863e"); grad.addColorStop(.48, "#efd99d"); grad.addColorStop(1, "#b88d4d");
   ctx.globalCompositeOperation = "source-over";
-  ctx.fillStyle = grad; ctx.fillRect(0,0,rect.width,rect.height);
-  ctx.strokeStyle = "rgba(104,72,34,.65)"; ctx.lineWidth = 1.5; ctx.strokeRect(12,12,rect.width-24,rect.height-24);
+  ctx.fillStyle = grad; ctx.fillRect(0, 0, rect.width, rect.height);
+  ctx.strokeStyle = "rgba(104,72,34,.65)"; ctx.lineWidth = 1.5;
+  ctx.strokeRect(12, 12, rect.width - 24, rect.height - 24);
+  ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillStyle = "#6e4b32";
+  ctx.font = "500 27px Georgia, serif";
+  ctx.fillText("A little golden secret", rect.width / 2, rect.height / 2 - 30);
+  ctx.font = "16px Georgia, serif";
+  ctx.fillText("Scratch here to discover our dates", rect.width / 2, rect.height / 2 + 5);
+  ctx.font = "24px Georgia, serif";
+  ctx.fillText("✦", rect.width / 2, rect.height / 2 + 47);
   ctx.globalCompositeOperation = "destination-out";
 }
 function revealAll() {
-  revealed = true;
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-  document.getElementById("scratch-prompt").style.display = "none";
-  document.getElementById("scratch-help").textContent = "Your special dates are revealed!";
+  if (revealed) return;
+  revealed = true; drawing = false; lastPoint = null;
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  help.textContent = "Your special dates are revealed!";
+  canvas.style.pointerEvents = "none";
 }
-function scratchAt(e) {
+function pointFromEvent(e) {
   const r = canvas.getBoundingClientRect();
-  const x = e.clientX-r.left, y = e.clientY-r.top;
-  ctx.beginPath(); ctx.arc(x,y,22,0,Math.PI*2); ctx.fill();
-  const pixels = ctx.getImageData(0,0,canvas.width,canvas.height).data;
-  let clear=0, total=0;
-  for(let i=3;i<pixels.length;i+=32){total++;if(pixels[i]<40)clear++;}
-  if(total && clear/total>.43) revealAll();
+  return { x: e.clientX - r.left, y: e.clientY - r.top };
 }
-canvas.addEventListener("pointerdown",e=>{if(revealed)return;drawing=true;canvas.setPointerCapture(e.pointerId);scratchAt(e)});
-canvas.addEventListener("pointermove",e=>{if(drawing&&!revealed)scratchAt(e)});
-canvas.addEventListener("pointerup",()=>drawing=false);
-canvas.addEventListener("pointercancel",()=>drawing=false);
-document.getElementById("reveal-dates").addEventListener("click",revealAll);
+function scratchAt(point) {
+  ctx.save();
+  ctx.globalCompositeOperation = "destination-out";
+  ctx.lineCap = "round"; ctx.lineJoin = "round"; ctx.lineWidth = 48;
+  if (lastPoint) {
+    ctx.beginPath(); ctx.moveTo(lastPoint.x, lastPoint.y); ctx.lineTo(point.x, point.y); ctx.stroke();
+  }
+  ctx.beginPath(); ctx.arc(point.x, point.y, 25, 0, Math.PI * 2); ctx.fill();
+  ctx.restore();
+  lastPoint = point;
+  moveCount++;
+  // Check progress periodically rather than reading the full canvas on every move.
+  if (moveCount % 8 === 0) {
+    const pixels = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+    let clear = 0, total = 0;
+    const step = 4 * 32;
+    for (let i = 3; i < pixels.length; i += step) { total++; if (pixels[i] < 40) clear++; }
+    if (total && clear / total > .38) revealAll();
+  }
+}
+canvas.addEventListener("pointerdown", e => {
+  if (revealed || (e.pointerType === "mouse" && e.button !== 0)) return;
+  e.preventDefault(); drawing = true; lastPoint = null;
+  canvas.setPointerCapture(e.pointerId);
+  scratchAt(pointFromEvent(e));
+  help.textContent = "Keep going — the dates are appearing underneath!";
+});
+canvas.addEventListener("pointermove", e => {
+  if (!drawing || revealed) return;
+  e.preventDefault(); scratchAt(pointFromEvent(e));
+});
+function stopScratch() { drawing = false; lastPoint = null; }
+canvas.addEventListener("pointerup", stopScratch);
+canvas.addEventListener("pointercancel", stopScratch);
+canvas.addEventListener("lostpointercapture", stopScratch);
+document.getElementById("reveal-dates").addEventListener("click", revealAll);
 paintGold();
-window.addEventListener("resize",()=>{if(!revealed)paintGold()});
+let resizeFrame;
+window.addEventListener("resize", () => {
+  cancelAnimationFrame(resizeFrame);
+  resizeFrame = requestAnimationFrame(() => { if (!revealed && !drawing) paintGold(); });
+});
 
 // Share button: native share on supported phones, otherwise copy invitation text.
 document.getElementById("share-invite").addEventListener("click",async()=>{

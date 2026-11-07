@@ -8,9 +8,9 @@ UID:aarthi-sanjay-reception-20270410@example.com
 DTSTAMP:20261107T000000Z
 DTSTART;VALUE=DATE:20270410
 DTEND;VALUE=DATE:20270411
-SUMMARY:Aarthi & Sanjay — Wedding Reception
+SUMMARY:Aarthi & Sanjay — Reception Ceremony
 LOCATION:RS Mahal\, Panchayat Office\, 88 Kolapakkam Main Road\, VGN Prathish Avenue\, Gerugambakkam\, Chennai 600128
-DESCRIPTION:Wedding reception celebration. Starts at 7:00 PM onwards.
+DESCRIPTION:Reception ceremony celebration. Starts at 7:00 PM onwards.
 END:VEVENT
 BEGIN:VEVENT
 UID:aarthi-sanjay-wedding-20270411@example.com

@@ -37,3 +37,83 @@ h1 span{color:#efd49f;font-style:italic}.mobile-break{display:none}.flourish{col
 .closing{background:linear-gradient(180deg,#efe4d1,#fbf5e9)}.closing>p:not(.kicker):not(.share-status){font:18px "Cormorant Garamond",serif;color:#816d5c}.signature{font-size:54px;color:#9c7541}.share-invite{margin-top:12px}.share-status{font-size:11px;color:var(--sage);min-height:16px}
 footer{padding:35px 20px 42px;text-align:center;background:#5c5143;color:#f8ecd6}footer div{color:#e2c58d;font-size:22px}footer strong{display:block;font:27px "Cormorant Garamond",serif;margin:8px}footer span,footer small{display:block;color:#dfd0b5;font-size:10px;letter-spacing:1px}footer small{margin-top:17px;font-size:8px;letter-spacing:3px}
 @media(max-width:680px){.site-header{height:58px;padding:0 13px}.site-header nav{gap:12px}.site-header a{font-size:7px;letter-spacing:1px}.save-date{font-size:7px;letter-spacing:1px}.hero{min-height:680px}.mobile-break{display:block}.section{padding:72px 17px}.scratch-shell{padding:27px 14px}.scratch-wrap{height:245px}.revealed-dates{padding:8px}.revealed-dates strong{font-size:20px}.revealed-dates b{font-size:19px}.revealed-dates small{font-size:8px}.date-divider{margin:0 7px}.event-grid{grid-template-columns:1fr}.venue-card{padding:25px 18px;gap:25px;flex-direction:column;text-align:center}.venue-copy h2{font-size:38px}.memories{grid-template-columns:1fr;text-align:center;padding-left:20px;padding-right:20px;gap:25px}.camera-icon{margin:auto}.memory-qr-panel{border-left:0;border-top:1px solid #e1d1b1}.countdown{gap:5px}.countdown div{padding:13px 2px}.countdown span{font-size:13px}}
+
+
+/* Aarthi & Sanjay photo gallery */
+.photo-gallery{background:linear-gradient(180deg,#f7efdf,#fffaf0);overflow:hidden}
+.photo-gallery h2{font-size:clamp(42px,5vw,58px);margin:10px 0}
+.gallery-intro{font:18px/1.6 "Cormorant Garamond",serif;color:#816e5f;margin:0 auto 28px}
+.photo-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;max-width:1040px;margin:0 auto}
+.photo-card{display:block;position:relative;overflow:hidden;border:1px solid #d7bd8a;border-radius:15px;background:#fff9ed;padding:8px;text-decoration:none;box-shadow:0 8px 24px #8e71421a}
+.photo-card img{display:block;width:100%;height:390px;object-fit:cover;border-radius:9px;transition:transform .5s ease}
+.photo-card:hover img{transform:scale(1.025)}
+.photo-card span{display:block;padding:13px 8px 8px;color:#765044;font:italic 22px "Cormorant Garamond",serif}
+.gallery-hint{margin:20px 0 0;color:#8d7864;font:12px "Cormorant Garamond",serif;letter-spacing:.5px}
+@media(max-width:680px){
+  .photo-gallery{padding-left:0;padding-right:0}
+  .photo-gallery>.kicker,.photo-gallery>h2,.photo-gallery>.gallery-intro,.photo-gallery>.gallery-hint{margin-left:18px;margin-right:18px}
+  .photo-strip{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:5px 18px 16px;scrollbar-width:thin}
+  .photo-card{flex:0 0 78vw;max-width:310px;scroll-snap-align:center}
+  .photo-card img{height:330px}
+  .photo-card span{font-size:21px}
+}
+
+
+/* Cinematic invitation panels: event information is layered directly over the couple photographs. */
+.hero{background-image:linear-gradient(180deg,#1e302b8c 0%,#30251d48 42%,#261c1b9c 100%),url("assets/aarthi-sanjay-moment-1.jpg");background-position:center 39%;}
+.photo-event-stack{max-width:1120px;margin:42px auto 30px;display:grid;gap:28px}
+.photo-event{min-height:610px;position:relative;display:grid;place-items:center;overflow:hidden;border:1px solid #c6a46a;box-shadow:0 14px 40px #6b4b2926;background-position:center;background-size:cover;color:#fff8e9}
+.reception-photo{background-image:url("assets/aarthi-sanjay-painted-moment.jpg");background-position:center 42%}
+.wedding-photo{background-image:url("assets/aarthi-sanjay-traditional-look.jpg");background-position:center 42%}
+.photo-event-shade{position:absolute;inset:0;background:linear-gradient(90deg,#211b1bc2 0%,#241c1b9c 44%,#241c1b42 100%)}
+.photo-event-copy{position:relative;z-index:1;width:min(590px,88%);margin:48px auto;padding:42px 35px;text-align:center;border:1px solid #ead6a8;background:#2d251f68;backdrop-filter:blur(3px);box-shadow:0 0 0 7px #fff4df1c}
+.photo-event-kicker{font-size:9px;letter-spacing:3px;line-height:1.8;color:#f3dcae;font-weight:600}
+.photo-event-script{font:italic 25px "Great Vibes",cursive;color:#f0d39b;margin:22px 0 0}
+.photo-event h3{font:500 clamp(42px,6vw,66px)/.98 "Cormorant Garamond",serif;color:#fff8eb;margin:8px 0 12px;text-shadow:0 2px 14px #21150e70}
+.event-ornament{color:#e8c88b;font-size:16px;margin:18px 0}
+.photo-event-date{font:500 24px "Cormorant Garamond",serif;letter-spacing:1px;margin:12px 0 3px}
+.photo-event-time{font:20px "Cormorant Garamond",serif;color:#f4d9a6;margin:5px 0}
+.photo-event-note{max-width:410px;margin:18px auto;color:#fff5e4;font:17px/1.6 "Cormorant Garamond",serif}
+.photo-event-calendar{display:inline-block;margin-top:12px;padding:11px 22px;border:1px solid #ead3a0;border-radius:30px;color:#fff7e7;text-decoration:none;font:13px "Cormorant Garamond",serif;transition:background .2s}
+.photo-event-calendar:hover{background:#fff3dc24}
+@media(max-width:680px){
+ .hero{background-position:53% center;min-height:720px}
+ .photo-event-stack{gap:18px;margin:30px auto 20px}
+ .photo-event{min-height:650px;background-position:center}
+ .reception-photo{background-position:47% center}
+ .wedding-photo{background-position:54% center}
+ .photo-event-shade{background:linear-gradient(180deg,#1c17186e 0%,#2118179c 45%,#1d1717c9 100%)}
+ .photo-event-copy{width:calc(100% - 34px);padding:34px 18px;margin:24px auto;background:#2b211f75}
+ .photo-event-script{font-size:24px}
+ .photo-event h3{font-size:48px}
+ .photo-event-date{font-size:22px}
+ .photo-event-note{font-size:16px}
+}
+
+/* Photo framing refinement: retain the complete original photographs. */
+.hero{position:relative;background-color:#302720;background-size:contain;background-repeat:no-repeat;background-position:center 42%;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background-image:url("assets/aarthi-sanjay-moment-1.jpg");background-size:cover;background-position:center 42%;filter:blur(18px);transform:scale(1.04);opacity:.58}
+.photo-event{min-height:0;aspect-ratio:1 / 1;max-width:860px;width:100%;margin-inline:auto;background-size:contain;background-repeat:no-repeat;background-position:center;background-color:#2c211d;isolation:isolate}
+.photo-event::before{content:"";position:absolute;inset:0;z-index:0;background-image:inherit;background-size:cover;background-position:center;filter:blur(16px);transform:scale(1.04);opacity:.38}
+.reception-photo{aspect-ratio:1205 / 1536}
+.wedding-photo{aspect-ratio:1 / 1}
+.photo-event-shade{z-index:1;background:linear-gradient(180deg,#211b1b30 0%,#241c1b52 48%,#241c1b72 100%)}
+.photo-event-copy{z-index:2}
+.scratch-wrap{touch-action:none;overscroll-behavior:contain;user-select:none;-webkit-user-select:none}
+#scratch-canvas{z-index:3;display:block;touch-action:none;pointer-events:auto;-webkit-user-select:none;user-select:none}
+@media(max-width:680px){
+ .hero{background-size:contain;background-position:center 42%;min-height:680px}
+ .hero::before{background-position:center 42%}
+ .photo-event-stack{padding:0 10px}
+ .photo-event{min-height:0;width:100%;}
+ .reception-photo{aspect-ratio:1205 / 1536}
+ .wedding-photo{aspect-ratio:1 / 1}
+ .photo-event-copy{width:calc(100% - 28px);padding:25px 14px;margin:14px auto}
+ .photo-event h3{font-size:clamp(34px,9vw,46px)}
+ .photo-event-note{font-size:15px}
+ .scratch-wrap{height:245px}
+}
+.hero::before{z-index:0}
+.hero-shade{z-index:1}
+.hero-content{z-index:2}
+.hero-bottom{z-index:2}
