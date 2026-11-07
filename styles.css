@@ -270,3 +270,119 @@ footer{padding:35px 20px 42px;text-align:center;background:#5c5143;color:#f8ecd6
   .photo-event-date{font-size:18px}
   .photo-event-note{font-size:14px}
 }
+
+/* Version 11 refinements based on your screenshots */
+.invitation-overlay{position:fixed;inset:0;z-index:50;display:grid;place-items:center;padding:20px;background:rgba(35,25,20,.91);backdrop-filter:blur(5px);transition:opacity .45s ease,visibility .45s ease}
+.invitation-overlay.is-hidden{opacity:0;visibility:hidden;pointer-events:none}
+.invitation-card{position:relative;width:min(530px,94vw);min-height:385px;padding:54px 28px 48px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:linear-gradient(145deg,#fffaf0,#f0e1c5);border:7px solid #4b3826;outline:1px solid #c8a66b;outline-offset:-14px;box-shadow:0 20px 70px #0005}
+.invitation-ornament{color:#b48b4b;font-size:20px;letter-spacing:5px;margin-bottom:20px}
+.invitation-script{font:italic 20px "Great Vibes",cursive;color:#d5ad68;margin:0 0 15px}
+.invitation-card h2{font:500 clamp(42px,8vw,62px) "Cormorant Garamond",serif;color:#70403c;margin:0 0 16px}
+.invitation-card h2 span{color:#b48b4b}
+.invitation-caption{font:10px Montserrat,sans-serif;letter-spacing:3px;color:#967a56;margin:0 0 28px}
+.open-invitation{border:0;background:#a47a43;color:#fffaf0;padding:15px 28px;font:500 13px Montserrat,sans-serif;cursor:pointer}
+.open-invitation:hover{background:#805d32;transform:translateY(-2px)}
+.invitation-flower{position:absolute;color:#d0ae73;font-size:30px;opacity:.6}.invitation-flower.top{top:17px;left:18px}.invitation-flower.bottom{bottom:14px;right:18px}
+.divine-section{background:linear-gradient(180deg,#fffaf0,#f4ead8)}
+.divine-intro{max-width:690px;margin:0 auto 28px;font:18px/1.7 "Cormorant Garamond",serif;color:#806b5c}
+.divine-art-frame{max-width:1000px;margin:25px auto 12px;padding:10px;background:#fffaf0;border:1px solid #d4b77c;box-shadow:0 8px 28px #6b4d2412}
+.divine-art-frame img{display:block;width:100%;height:auto;object-fit:contain}
+.divine-names{max-width:1000px;margin:12px auto 0;display:grid;grid-template-columns:repeat(5,1fr);gap:10px;color:#79533b;font:16px "Cormorant Garamond",serif}
+.kural-section{background:#fbf5e9;border-top:1px solid #e9d8b6;border-bottom:1px solid #e9d8b6}
+.kural-section h2{font-size:clamp(32px,5vw,48px)}
+.kural-reference{font:16px "Cormorant Garamond",serif;color:#8b725f}
+.tamil-kural{max-width:800px;margin:30px auto 20px;color:#70403c;font:600 clamp(23px,3.3vw,34px)/1.8 "Noto Serif Tamil","Latha",serif}
+.kural-divider{color:#b48b4b;letter-spacing:8px;margin:20px}
+.kural-meaning{max-width:850px;margin:0 auto;color:#806b5c;font:18px/1.9 "Noto Serif Tamil","Latha",serif}
+.story{background:linear-gradient(#fbf6e9e8,#fbf6e9ee),url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80") center/cover}
+.story-timeline{max-width:760px;margin:42px auto 0;text-align:left;position:relative}
+.story-timeline:before{content:"";position:absolute;left:27px;top:25px;bottom:25px;width:1px;background:#c9a66c}
+.story-step{display:grid;grid-template-columns:56px 1fr;gap:24px;position:relative;margin:0 0 30px;align-items:start}
+.story-step>span{width:54px;height:54px;border:1px solid #c9a66c;border-radius:50%;display:grid;place-items:center;background:#fbf6e9;color:#9a7443;font:15px "Cormorant Garamond",serif;z-index:1}
+.story-step h3{font:500 30px "Cormorant Garamond",serif;color:#634638;margin:0 0 5px}
+.story-step p{font:16px/1.6 Montserrat,sans-serif;color:#887565;margin:0}
+@media(max-width:680px){.divine-names{grid-template-columns:repeat(2,1fr);font-size:15px}.divine-names span:last-child{grid-column:1/-1}.invitation-card{min-height:350px;padding:45px 18px}.tamil-kural{font-size:22px}.kural-meaning{font-size:15px}.story-step{gap:15px}.story-step h3{font-size:25px}.story-step p{font-size:13px}}
+body:has(.invitation-overlay:not(.is-hidden)){overflow:hidden}
+
+/* Version 11 refinement: temple-inspired divine gallery and legible Thirukkural */
+.divine-temple-frame{max-width:1120px;margin:30px auto 12px;padding:10px;background:linear-gradient(135deg,#fffdf6,#f2e2c4);border:1px solid #c9a66c;box-shadow:0 14px 38px #6b4d2418}
+.divine-temple-frame img{display:block;width:100%;height:auto;object-fit:contain}
+.divine-blessing-note{margin:18px auto 0;max-width:760px;color:#8a6c4c;font:italic 18px/1.7 "Cormorant Garamond",serif}
+.kural-number{display:flex;align-items:center;justify-content:center;gap:12px;margin:22px auto 0;color:#70403c;font-family:"Noto Serif Tamil","Latha",serif}
+.kural-number span{font-size:18px}
+.kural-number strong{display:inline-grid;place-items:center;min-width:58px;height:58px;padding:0 12px;border-radius:50%;background:#70403c;color:#fff8e9;border:3px double #d7b66f;font:700 30px/1 Georgia,serif;box-shadow:0 4px 12px #70403c24}
+.kural-number small{font-size:15px;color:#8b725f}
+.tamil-kural{max-width:100%;width:max-content;margin:28px auto 20px;color:#70403c;font:600 clamp(17px,2.15vw,30px)/1.8 "Noto Serif Tamil","Latha",serif;text-align:center}
+.tamil-kural span{display:block;white-space:nowrap}
+@media(max-width:680px){
+ .divine-temple-frame{margin:22px 4px 10px;padding:5px}
+ .kural-number{gap:8px;flex-wrap:wrap}
+ .kural-number strong{min-width:48px;height:48px;font-size:25px}
+ .kural-number span{font-size:16px}
+ .kural-number small{width:100%;text-align:center}
+ .tamil-kural{font-size:clamp(13px,3.6vw,19px);line-height:2.0}
+ .tamil-kural span{white-space:nowrap}
+ .kural-meaning{padding:0 14px;font-size:15px;line-height:1.9}
+}
+
+/* Calendar links: clear Google Calendar actions for both wedding events */
+.calendar-actions{display:flex;flex-direction:column;align-items:center;gap:10px;max-width:560px;margin:30px auto 12px;padding:18px 20px;border:1px solid #d9bd83;background:rgba(255,252,244,.72)}
+.calendar-heading{margin:0 0 4px;color:#70403c;font-family:Georgia,serif;font-size:20px}
+.calendar-google,.calendar-actions .calendar-download{display:block;width:100%;max-width:450px;box-sizing:border-box;padding:14px 18px;text-align:center;text-decoration:none;font-size:15px;letter-spacing:.02em;transition:transform .2s,background .2s}
+.calendar-google{background:#426f63;color:#fffdf6;border:1px solid #426f63}
+.calendar-google:hover{background:#345a50;transform:translateY(-1px)}
+.calendar-actions .calendar-download{margin:0;background:transparent;color:#6c5134;border:1px solid #c9a66c}
+.calendar-note{max-width:560px;margin:12px auto 24px;text-align:center;line-height:1.8}
+@media(max-width:600px){.calendar-actions{margin:22px 12px;padding:14px 12px}.calendar-google,.calendar-actions .calendar-download{font-size:14px;padding:13px 10px}}
+
+/* Keep Thirukkural number simple and clearly readable */
+.kural-number{display:flex;align-items:baseline;justify-content:center;gap:16px;margin:22px auto 0;color:#70403c;font-family:"Noto Serif Tamil","Latha",serif}
+.kural-number .kural-number-label{font-size:20px;font-weight:600;letter-spacing:.02em}
+.kural-number small{font-size:15px;color:#8b725f}
+@media(max-width:680px){.kural-number{gap:8px;flex-wrap:wrap}.kural-number .kural-number-label{font-size:18px}.kural-number small{width:100%;text-align:center}}
+
+/* Final preference: show Thirukkural 45 as plain, readable text */
+.kural-number .kural-number-label{font-weight:400!important;font-size:19px;letter-spacing:0}
+
+/* Final requested layout: Lord Ganesha alone, followed by a precisely line-broken Kural */
+.ganesha-blessing-art{max-width:1200px;margin:0 auto;padding:0 14px}
+.ganesha-blessing-art img{display:block;width:100%;height:auto;object-fit:contain}
+.kural-section .kural-card{max-width:1120px;margin:0 auto;padding:28px 24px 34px;text-align:center;background:linear-gradient(180deg,#fffaf0,#f8edda);border:1px solid #d6ad62;box-shadow:0 8px 28px rgba(90,54,25,.08)}
+.kural-number-plain{margin:0 auto 22px;color:#70403c;font-family:"Noto Serif Tamil","Latha",serif;font-size:19px;font-weight:400;letter-spacing:0}
+.kural-section .tamil-kural{width:100%;max-width:none;margin:0 auto 18px;text-align:center;font-family:"Noto Serif Tamil","Latha",serif;font-size:clamp(18px,2.4vw,31px);font-weight:500;line-height:1.9;color:#63352e}
+.kural-section .tamil-kural span{display:block;white-space:nowrap}
+.kural-section .kural-meaning{max-width:900px;margin:18px auto 0;color:#876b56;font-family:"Noto Serif Tamil","Latha",serif;font-size:clamp(13px,1.35vw,17px);line-height:1.9}
+@media(max-width:600px){
+ .ganesha-blessing-art{padding:0 5px}
+ .kural-section .kural-card{padding:22px 8px 26px;margin:0 5px}
+ .kural-number-plain{font-size:17px;margin-bottom:16px}
+ .kural-section .tamil-kural{font-size:clamp(12px,3.55vw,17px);line-height:2.0}
+ .kural-section .tamil-kural span{white-space:nowrap}
+ .kural-section .kural-meaning{font-size:12px;padding:0 5px;line-height:1.8}
+}
+
+/* Final approved divine blessing poster: single Ganesha and exact two-line Kural */
+.ganesha-kural-poster{padding:0!important;margin:0 auto!important;background:transparent!important}
+.ganesha-kural-poster img{display:block;width:100%;max-width:1672px;height:auto;margin:0 auto;object-fit:contain}
+
+/* Reception and wedding keepsake illustrations in the scratch-to-reveal date card */
+.revealed-dates .revealed-event{display:flex!important;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-width:0;text-align:center}
+.revealed-dates .revealed-event-art{display:block;width:112px;height:100px;object-fit:cover;object-position:center;border-radius:10px;margin:3px auto 5px;box-shadow:0 3px 12px rgba(89,57,31,.12)}
+.revealed-dates .revealed-event strong{font-size:clamp(19px,2.2vw,25px);line-height:1.05}
+.revealed-dates .revealed-event b{font-size:clamp(17px,2vw,22px);line-height:1}
+.revealed-dates .revealed-event small{font-size:10px}
+@media(max-width:600px){
+ .revealed-dates{padding:8px 6px}
+ .revealed-dates .revealed-event-art{width:82px;height:76px}
+ .revealed-dates .revealed-event strong{font-size:17px}
+ .revealed-dates .revealed-event b{font-size:15px}
+ .revealed-dates .revealed-event small{font-size:8px}
+ .revealed-dates .date-divider{height:120px;margin:0 5px}
+}
+
+/* Connected wedding memories Google Drive link and QR code */
+.memory-qr-link{display:inline-flex;align-items:center;justify-content:center;padding:12px;background:#fffaf0;border:1px solid #d9bd86;box-shadow:0 0 0 5px rgba(190,151,83,.12);text-decoration:none}
+.memory-qr-image{display:block;width:190px;height:190px;max-width:100%;object-fit:contain}
+.memory-qr-panel .memory-qr-link:hover{transform:translateY(-2px)}
+.memory-qr-panel .memory-qr-link{transition:transform .2s ease}
+@media(max-width:650px){.memory-qr-image{width:150px;height:150px}}

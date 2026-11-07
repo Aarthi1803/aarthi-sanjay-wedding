@@ -8,14 +8,25 @@
   <title>Aarthi & Sanjay | A Lifetime of Togetherness</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@400;500;600&family=Noto+Serif+Tamil:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="gold-edge"></div>
+  <div class="invitation-overlay" id="invitation-overlay" role="dialog" aria-modal="true" aria-labelledby="welcome-title">
+    <div class="invitation-card">
+      <div class="invitation-flower top">✿</div><div class="invitation-ornament">✦ ❀ ✦</div>
+      <p class="invitation-script">With the blessings of our families</p>
+      <h2 id="welcome-title">Aarthi <span>&amp;</span> Sanjay</h2>
+      <p class="invitation-caption">YOU ARE CORDIALLY INVITED</p>
+      <button type="button" class="open-invitation" id="open-invitation">Open invitation ♡</button>
+      <div class="invitation-flower bottom">✿</div>
+    </div>
+  </div>
+
   <header class="site-header">
     <a class="monogram" href="#home">A <span>✦</span> S</a>
-    <nav><a href="#dates">Our dates</a><a href="#venue">Venue</a><a href="#our-moments">Our photos</a><a href="#memories">Share photos</a></nav>
+    <nav><a href="#dates">Our dates</a><a href="#blessings-gallery">Blessings</a><a href="#love-story">Our story</a><a href="#venue">Venue</a><a href="#memories">Share photos</a></nav>
     <span class="save-date">SAVE THE DATE ↗</span>
   </header>
 
@@ -34,6 +45,9 @@
       <div class="hero-bottom"></div>
     </section>
 
+    <section class="divine-section section ganesha-kural-poster" id="blessings-gallery">
+      <img src="assets/ganesha-thirukkural-blessing.jpg" alt="Lord Ganesha blessing Aarthi and Sanjay, with Thirukkural 45 displayed in two lines: Anbum Aranum Udaithayin Ilvazhkkai; Panbum Payanum Athu.">
+    </section>
     <section class="intro section" id="dates">
       <p class="kicker">A DATE WRITTEN IN THE STARS</p>
       <h2>Discover our<br><em>special days.</em></h2>
@@ -44,9 +58,17 @@
         <h3>Uncover our celebration dates</h3>
         <div class="scratch-wrap" id="scratch-wrap">
           <div class="revealed-dates">
-            <div><span>RECEPTION</span><strong>Saturday, 10</strong><b>April 2027</b><small>7:00 PM onwards</small></div>
+            <div class="revealed-event reception-revealed">
+              <span>RECEPTION</span>
+              <img class="revealed-event-art" src="assets/reception-floral-table.png" alt="Elegant ivory and blush flowers, candles and gold table details at a reception">
+              <strong>Saturday, 10</strong><b>April 2027</b><small>7:00 PM onwards</small>
+            </div>
             <div class="date-divider"></div>
-            <div><span>WEDDING</span><strong>Sunday, 11</strong><b>April 2027</b><small>7:00 AM – 8:00 AM</small></div>
+            <div class="revealed-event wedding-revealed">
+              <span>WEDDING</span>
+              <img class="revealed-event-art" src="assets/wedding-thaali-rich-photo.jpg" alt="Traditional Tamil wedding thaali arranged on turmeric-yellow cloth">
+              <strong>Sunday, 11</strong><b>April 2027</b><small>7:00 AM – 8:00 AM</small>
+            </div>
           </div>
           <canvas id="scratch-canvas" aria-label="Scratch the golden surface with your finger to reveal the wedding dates">Scratch to reveal the dates: Reception Saturday, 10 April 2027; Wedding Sunday, 11 April 2027.</canvas>
         </div>
@@ -97,17 +119,24 @@
         </div>
         <p id="countdown-note">Until our celebration begins</p>
       </div>
-      <a class="calendar-download" href="aarthi-sanjay-calendar.ics" download>＋ Add both dates to Apple Calendar</a>
-      <p class="calendar-note">Calendar entries are saved as all-day events until the timings are confirmed.</p>
+      <div class="calendar-actions">
+        <p class="calendar-heading">Save our special dates</p>
+        <a class="calendar-google" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Aarthi%20%26%20Sanjay%20Reception%20Ceremony&amp;dates=20270410T133000Z/20270410T163000Z&amp;details=Reception%20Ceremony%20%7C%207%3A00%20PM%20onwards%20(IST)&amp;location=RS%20Mahal%2C%2088%20Kolapakkam%20Main%20Road%2C%20Gerugambakkam%2C%20Chennai%20600128&amp;ctz=Asia%2FKolkata" target="_blank" rel="noopener">＋ Add Reception to Google Calendar</a>
+        <a class="calendar-google" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Aarthi%20%26%20Sanjay%20Wedding%20Ceremony&amp;dates=20270411T013000Z/20270411T023000Z&amp;details=Wedding%20Ceremony%20%7C%207%3A00%20AM%20to%208%3A00%20AM%20(IST)&amp;location=RS%20Mahal%2C%2088%20Kolapakkam%20Main%20Road%2C%20Gerugambakkam%2C%20Chennai%20600128&amp;ctz=Asia%2FKolkata" target="_blank" rel="noopener">＋ Add Wedding to Google Calendar</a>
+        <a class="calendar-download" href="aarthi-sanjay-calendar.ics" download>＋ Download both dates for Apple Calendar</a>
+      </div>
+      <p class="calendar-note">Choose each event to save both dates to Google Calendar, or download the calendar file for Apple Calendar.</p>
     </section>
 
-    <section class="story section">
-      <p class="kicker">A PROMISE FOR TOMORROW</p>
-      <h2>Our story <em>continues.</em></h2>
-      <p class="quote">“Before we knew each other, our story had already begun.”</p>
-      <p class="story-copy">With the love and blessings of our families, we warmly invite you to be part of our wedding celebrations. Your presence will make our special days even more meaningful.</p>
+    <section class="story section" id="love-story">
+      <p class="kicker">A PROMISE FOR TOMORROW</p><h2>Our love <em>story.</em></h2>
+      <p class="quote">“Some stories become beautiful because two hearts choose to walk together.”</p>
+      <div class="story-timeline">
+        <article class="story-step"><span>01</span><div><h3>The first hello</h3><p>Two paths crossed, and a new chapter quietly began.</p></div></article>
+        <article class="story-step"><span>02</span><div><h3>Growing together</h3><p>Every conversation, smile and shared moment made the journey more special.</p></div></article>
+        <article class="story-step"><span>03</span><div><h3>A promise for forever</h3><p>With our families beside us, we are ready to begin our next chapter on 11 April 2027.</p></div></article>
+      </div>
     </section>
-
     <section class="venue section" id="venue">
       <p class="kicker">CELEBRATION VENUE</p>
       <div class="venue-card">
@@ -133,13 +162,15 @@
         <h2>Little moments.<br><em>Forever memories.</em></h2>
         <p class="quote">“The happiest memories are made together.”</p>
         <p>Capture a little piece of our celebration and share your photos and videos with us. We would love to relive the day through your eyes.</p>
-        <a class="share-button" id="memory-link" href="#memories">Share your moments ↗</a>
-        <small class="memory-note" id="memory-note">The shared photo album link will be activated once it is provided.</small>
+        <a class="share-button" id="memory-link" href="https://drive.google.com/drive/folders/1rSmYLLywbdtTQlS8_Cfqx5g--Oyjuetm?usp=drive_link" target="_blank" rel="noopener noreferrer">Share your moments ↗</a>
+        <small class="memory-note" id="memory-note">Tap to open our shared Google Drive folder and add your wedding photos and videos.</small>
       </div>
       <div class="memory-qr-panel">
-        <div class="qr-placeholder"><span>✧</span><strong>YOUR MEMORIES<br>WILL LIVE HERE</strong><small>PHOTO ALBUM QR</small></div>
+        <a class="memory-qr-link" href="https://drive.google.com/drive/folders/1rSmYLLywbdtTQlS8_Cfqx5g--Oyjuetm?usp=drive_link" target="_blank" rel="noopener noreferrer" aria-label="Open Aarthi and Sanjay wedding memories Google Drive folder">
+          <img class="memory-qr-image" src="assets/wedding-memories-drive-qr.png" alt="QR code to open Aarthi and Sanjay's shared wedding memories folder">
+        </a>
         <p class="kicker">SCAN. SHARE. CHERISH.</p>
-        <p>Our shared memories folder</p>
+        <p>Scan to open our shared memories folder</p>
         <span class="script">With love,<br>Aarthi & Sanjay</span>
       </div>
     </section>

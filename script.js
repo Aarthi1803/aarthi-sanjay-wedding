@@ -121,3 +121,13 @@ memoryLink.addEventListener("click",e=>{
   if(!SHARE_ALBUM_URL){e.preventDefault();document.getElementById("memory-note").textContent="To activate photo uploads, add your Google Drive shared-folder link in script.js. Then the button and QR can open that folder.";return;}
   memoryLink.href=SHARE_ALBUM_URL; memoryLink.target="_blank"; memoryLink.rel="noopener";
 });
+
+// Invitation cover: open the card to reveal the website.
+const invitationOverlay = document.getElementById("invitation-overlay");
+const openInvitation = document.getElementById("open-invitation");
+if (invitationOverlay && openInvitation) {
+  openInvitation.addEventListener("click", () => {
+    invitationOverlay.classList.add("is-hidden");
+    history.replaceState(null, "", location.pathname + location.search + "#home");
+  });
+}
