@@ -1,4 +1,8 @@
-# Aarthi & Sanjay — Wedding Invitation (Version 6)
+## Version 10 — responsive photo clarity update
+
+Updated event photo framing for desktop and mobile: full photographs are shown without cropping, blurred duplicate overlays have been removed, and mobile invitation text panels are more compact.
+
+# Aarthi & Sanjay — Wedding Invitation (Version 10)
 
 A mobile-friendly static wedding invitation built with HTML, CSS and JavaScript.
 
@@ -47,7 +51,7 @@ Extract the ZIP and open `index.html` in a browser. An internet connection is ne
 The opening hero uses Aarthi and Sanjay's couple photograph. Reception and wedding details are presented as elegant text overlays on the painted couple portrait and traditional wedding portrait. All photos are stored locally in the assets folder.
 
 
-## Version 6 refinements
+## Version 10 refinements
 - Couple photos in the hero and event invitation panels now preserve the full image instead of aggressively cropping faces and bodies. A softly blurred backdrop fills the remaining space for a polished look.
 - The scratch-card gold and its lettering are now painted onto the same canvas, so scratching visibly removes both and reveals the dates underneath.
 - Improved touch handling for phones and tablets, continuous finger strokes, clearer scratch feedback, and a more reliable reveal threshold. The tap-to-reveal fallback remains available.
